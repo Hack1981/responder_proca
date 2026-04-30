@@ -2,8 +2,18 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from google import genai
 from google.genai import types
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# 🔥 CORS LIBERADO
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # aceita qualquer origem
+    allow_credentials=True,
+    allow_methods=["*"],  # todos métodos (GET, POST, etc)
+    allow_headers=["*"],  # todos headers
+)
 
 API_KEY = "AIzaSyDxKpqdh5jAM8xbhD1bAWU1HVSUgepITxU"
 
