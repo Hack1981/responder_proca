@@ -29,7 +29,7 @@ def gerar(dados: Prompt):
 
     try:
         for chunk in client.models.generate_content_stream(
-            model="gemini-2.5-flash-lite",
+            model="gemma-4-31b-it",
             contents=[
                 types.Content(
                     role="user",
